@@ -21,6 +21,11 @@ class RPN
     end
   end
 
+  def value
+    @stack.last(2).join "\n"
+  end
+
+  private
   def calc op
     raise ArgumentError, "Operation requires two arguments" if @stack.length < 2
     prev, last = @stack.slice! -2, 2
@@ -28,7 +33,4 @@ class RPN
     @stack << prev.public_send(op, last)
   end
 
-  def value
-    @stack.last(2).join "\n"
-  end
 end
