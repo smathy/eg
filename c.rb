@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative "rpn"
+require_relative "lib/rpn"
 
 rpn = RPN.new
 
